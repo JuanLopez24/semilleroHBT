@@ -10,7 +10,6 @@ package-lock.json
 **/dist/
 **/build/
 *.tgz
-**/angular/lib/
 **/target/
 **/lib/
 **/node_modules/
