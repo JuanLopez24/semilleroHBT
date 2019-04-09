@@ -1,0 +1,66 @@
+<h2>{{ header }}</h2>
+
+
+
+<div>
+		<form>
+			<table>
+				<tr><td>tipo de identificacion</td><td>numero identificacion</td></tr>
+				<tr><td><select><option>cedula ciudadania</option>
+						        <option>pasaporte</option></select></td><td><input type="text" [(ngModel)]="persona.numeroIdentificacion" name="name"></td></tr>
+				<tr><td>nombres</td><td>apellidos</td></tr>
+				<tr><td><input type="text" [(ngModel)]="persona.nombre" name="name"></td><td><input type="text" [(ngModel)]="persona.apellido" name="lastName"></td></tr>
+				<tr><td>id</td><td>Fecha</td></tr>
+				<tr><td><input type="text" [(ngModel)]="persona.id" name="id"></td><input type="date" [(ngModel)]="persona.fecha" name="fecha"></tr>
+				<tr><td>sexo</td><td>mayor de edad?</td></tr>
+				<tr><td><input type="radio" name="gender"[(ngModel)]="persona.sexo" value="Femenino">femenino
+					<input type="radio" [(ngModel)]="persona.sexo" name="gender" value="Masculino">masculino</td>
+					<td><label><input type="checkbox" [(ngModel)]="persona.mayorEdad" name="true">si</label>
+						<label><input type="checkbox" [(ngModel)]="persona.mayorEdad"  name="false">no</label></td></tr>
+				<tr><td><input type="submit" name="sube" value="Ingresar" (click)="guardar()" (click)="mostrar()"></td></tr>
+
+			</table>
+		</form>
+		<form>
+			<!--<div #empty>no hay contenido </div>-->
+			<ul *ngIf="personas.length>0; else empty">
+					<li *ngFor="let  per of  personas">
+							<span> {{per.id}}</span>
+							<span> {{per.nombre | lowercase}}</span>
+							<span>{{per.apellido | lowercase}} </span>
+							<span> {{per.tipoIdentificacion}}</span>
+							<span> {{per.numeroIdentificacion| lowercase}}</span>
+							<span> {{per.mayorEdad| lowercase}}</span>
+							<span> {{per.sexo | lowercase}}</span>
+							<span> {{per.fecha | lowercase}}</span>
+
+						  </li>
+
+			</ul>
+			<pre>{{ persona | json }}</pre>
+		</form>
+	</div>
+
+	<h2>{{ header2 }}</h2>
+	<div>
+		<form>
+				<table>
+						<tr><td>tipo de identificacion</td><td>numero identificacion</td></tr>
+						<tr><td><select disabled="true"><option>cedula ciudadania</option>
+										<option>pasaporte</option></select></td><td><input type="text" [(ngModel)]="persona.numeroIdentificacion" name="name" disabled="true"></td></tr>
+						<tr><td>nombres</td><td>apellidos</td></tr>
+						<tr><td><input type="text" [(ngModel)]="persona.nombre" name="name"></td><td><input type="text" [(ngModel)]="persona.apellido" name="lastName"></td></tr>
+						<tr><td>id</td><td>Fecha</td></tr>
+						<tr><td><input type="text" [(ngModel)]="persona.id" name="id" disabled="true"></td><input type="date" [(ngModel)]="persona.fecha" name="fecha"></tr>
+						<tr><td>sexo</td><td>mayor de edad?</td></tr>
+						<tr><td><input type="radio" name="gender"[(ngModel)]="persona.sexo" value="Femenino">femenino
+							<input type="radio" [(ngModel)]="persona.sexo" name="gender" value="Masculino">masculino</td>
+							<td><label><input type="checkbox" [(ngModel)]="persona.mayorEdad" name="true">si</label>
+								<label><input type="checkbox" [(ngModel)]="persona.mayorEdad"  name="false">no</label></td></tr>
+						<tr><td><input type="submit" name="sube" value="Ingresar" (click)="guardar()" (click)="mostrar()"></td></tr>
+		
+					</table>
+		</form>
+	</div>
+	
+

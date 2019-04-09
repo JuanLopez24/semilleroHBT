@@ -1,0 +1,5 @@
+Para ejecutar por primera vez es necesario descomentar las instrucciones comentadas en los archivos html
+de apoyo.component.html y creacion-usuario.component.ntml. luego de ejecutarlo por primera vez, volver a comentar
+las lineas que estaban comentadas. Este problema no lo pude analizar pero estare pendiente para encontrar una solución.
+
+La función de editar esta asociada con la funcion de agregar, en la cual se le envian los datos de entrada.
